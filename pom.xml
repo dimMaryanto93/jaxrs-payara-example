@@ -3,10 +3,10 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.maryanto.dimas.jaxrs.example</groupId>
-	<artifactId>jaxrs-ri-example</artifactId>
+	<artifactId>jaxrs-example</artifactId>
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<name>jaxrs-ri-example Maven Webapp</name>
+	<name>JAX RS example Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 
 	<repositories>
