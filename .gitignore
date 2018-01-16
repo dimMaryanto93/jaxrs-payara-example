@@ -1,0 +1,13 @@
+# eclipse project
+.classpath
+.settings/
+.project
+
+# maven project
+target/
+
+# vim ignore
+*.swp
+
+# mac ignore
+.DS_Store
