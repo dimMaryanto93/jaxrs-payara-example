@@ -7,9 +7,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
 
+import javax.ws.rs.BeanParam;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.HeaderParam;
@@ -20,6 +19,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
+import com.maryanto.dimas.jaxrs.example.filterbean.PesertaFilterBean;
 import com.maryanto.dimas.jaxrs.example.model.Peserta;
 
 @Path("/peserta")
@@ -60,6 +60,14 @@ public class PesertaController {
 	public String updatePeserta(@QueryParam(value = "id") String value,
 			@HeaderParam("Content-Type") String contentType) {
 		return String.format("the value is %s and then the type is %s", value, contentType);
+	}
+
+	@GET
+	@Path("/filter")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Peserta filterBy(@BeanParam PesertaFilterBean filter) {
+		return new Peserta(String.valueOf(filter.getId()), filter.getNama(), null, null, filter.isActive(),
+				Timestamp.valueOf(LocalDateTime.now()));
 	}
 
 }
