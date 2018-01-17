@@ -13,5 +13,7 @@ public class Resouces {
 	public String messages() {
 		return "{ \"value\" : \"Spring security\", \"nama\": \"Dimas Maryanto\"}";
 	}
+	
+
 
 }
