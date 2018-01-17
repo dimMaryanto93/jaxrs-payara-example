@@ -11,3 +11,7 @@ target/
 
 # mac ignore
 .DS_Store
+
+# jetbraints
+.idea/
+*.iml

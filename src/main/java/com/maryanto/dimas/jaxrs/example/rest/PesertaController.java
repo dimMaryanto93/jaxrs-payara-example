@@ -10,6 +10,7 @@ import java.util.List;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
@@ -30,6 +31,13 @@ public class PesertaController {
 				new Peserta("002", "Dimas", "jl.bukit indah", Date.valueOf(LocalDate.now()), false,
 						Timestamp.valueOf(LocalDateTime.now()))));
 		return list;
+	}
+
+	@Path("/{pesertaId}")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public Peserta get(@PathParam("pesertaId") String pesertaId) {
+		return new Peserta(pesertaId, null, null, null, null, null);
 	}
 
 }
