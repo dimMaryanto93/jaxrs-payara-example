@@ -7,6 +7,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -16,15 +18,10 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.maryanto.dimas.jaxrs.example.model.Peserta;
 
 @Path("/peserta")
 public class PesertaController {
-	
-	private final static Logger console = LoggerFactory.getLogger(PesertaController.class);
 
 	@Path("/list")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -46,7 +43,7 @@ public class PesertaController {
 	public Peserta get(@PathParam("pesertaId") String pesertaId) {
 		return new Peserta(pesertaId, null, null, null, null, null);
 	}
-	
+
 	@POST
 	@Path("/new")
 	@Produces(MediaType.APPLICATION_JSON)
